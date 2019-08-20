@@ -19,7 +19,7 @@ power_one.user = user_one
 power_one.remote_photo_url = invisibility_url
 power_one.save!
 
-immortality_url = "https://wearyourvoicemag.com/wp-content/uploads/2018/02/Webp.net-resizeimage-30-800x512.jpg"
+immortality_url = "http://images.newindianexpress.com/uploads/user/imagelibrary/2018/6/16/w600X300/IMMORTALITY.jpg"
 user_two = User.new(name: "Lestat", email: "Lestat@hotmail.com", password:"123456")
 power_two = Superpower.new(name: "Immortality", description: "Get super old forever")
 user_two.save!
@@ -35,7 +35,7 @@ power_three.user = user_three
 power_three.remote_photo_url = flying_url
 power_three.save!
 
-silence_url = "http://images.newindianexpress.com/uploads/user/imagelibrary/2018/6/16/w600X300/IMMORTALITY.jpg"
+silence_url = "https://wearyourvoicemag.com/wp-content/uploads/2018/02/Webp.net-resizeimage-30-800x512.jpg"
 user_four = User.new(name: "Kaylee", email: "Kaylee@hotmail.com", password:"123456")
 power_four = Superpower.new(name: "To silence people", description: "To shut up all of the chatterboxes")
 user_four.save!
