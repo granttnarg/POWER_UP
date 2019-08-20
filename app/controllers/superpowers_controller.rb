@@ -17,4 +17,10 @@ class SuperpowersController < ApplicationController
   def destroy
   end
 
+  private
+
+  def superpower_params
+    params.require(:superpower).permit(:photo)
+  end
+
 end
