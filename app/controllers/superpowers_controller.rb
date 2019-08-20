@@ -41,7 +41,7 @@ class SuperpowersController < ApplicationController
   def destroy
     set_superpower
     @superpower.destroy
-    redirect_to superpower_path
+    redirect_to superpowers_path
   end
 
   private
