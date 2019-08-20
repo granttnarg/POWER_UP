@@ -37,10 +37,13 @@ class SuperpowersController < ApplicationController
   end
 
   def destroy
+    set_superpower
+    @superpower.destroy
+    redirect_to superpower_path
   end
 
   private
-  
+
   def set_superpower
     @superpower = Superpower.find(params[:id])
   end
