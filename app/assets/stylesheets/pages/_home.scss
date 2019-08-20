@@ -6,9 +6,14 @@ body {
   line-height: 1.8;
   color: #6c757d;
 }
+.dashboard-container {
+  display: center;
+  margin: 10px auto;
+  padding-top:140px;
+  text-align: center;
+  width: 900px;
 
-
-
+}
 ::-moz-selection {
   color: #fff;
   background: #65c0ba;

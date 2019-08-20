@@ -1,0 +1,12 @@
+<div class="dashboard-container">
+  <h4>
+    <strong>Welcome! <%= @user.name %></strong>
+  </h4>
+      <p>You have</p>
+      <% @superpowers.each do |superpower| %>
+        <%= superpower.name %>
+        <%= superpower.description %>
+        <p>is rented by <%= superpower.user.name %></p>
+      <p>for following date: <%= superpower.booking.date %></p>
+    <% end %>
+</div>
