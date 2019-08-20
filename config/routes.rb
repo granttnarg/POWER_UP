@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :users, only: [:edit, :update]
-  resources :superpowers, only: [:index, :show, :new, :create, :destroy] do
+  resources :superpowers, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     resources :bookings, only: [:new, :create]
   end
   resources :bookings, only: [:destroy] do
