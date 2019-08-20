@@ -23,7 +23,26 @@ class SuperpowersController < ApplicationController
     end
   end
 
+  def edit
+    set_superpower
+  end
+
+  def update
+    set_superpower
+    if @superpower.update(superpower_params)
+      redirect_to superpowers_path
+    else
+      render :edit
+    end
+  end
+
   def destroy
+  end
+
+  private
+  
+  def set_superpower
+    @superpower = Superpower.find(params[:id])
   end
 
   def superpower_params
