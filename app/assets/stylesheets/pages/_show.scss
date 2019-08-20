@@ -1,6 +1,21 @@
+
+
 .show-container {
-  display: center;
-  margin: 10px auto;
-  text-align: center;
-  width: 920px;
+ text-align: center
+}
+
+.inline {
+  list-style:none;
+}
+
+.back-index {
+ color: #20c99c
+}
+.back-index {
+  color: #20c99c;
+  border: 2px solid  #20c99c;
+  padding: 10px 25px;
+  cursor: pointer;
+  font-size: 16px;
+  padding-top: 16px;
 }
