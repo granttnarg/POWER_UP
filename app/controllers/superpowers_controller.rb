@@ -7,6 +7,8 @@ class SuperpowersController < ApplicationController
 
   def show
     @superpower = Superpower.find(params[:id])
+    # @booking = Booking.new
+    # @bookings = @superpower.bookings
   end
 
   def new
