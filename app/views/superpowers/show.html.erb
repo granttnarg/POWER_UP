@@ -1,8 +1,16 @@
-<h1><%= @superpower.name %></h1>
-<p><%= @superpower.description %></p>
-<ul>
-  <li><b>User:</b> <%= @superpower.user.name %></li>
-  <li><b>Book:</b> <%= @superpower.user.email %></li>
-</ul>
+<div class="show-conatiner">
+  <h1>
+    <strong><%= @superpower.name %></strong>
+  </h1>
+  <%= cl_image_tag @superpower.photo, height: 300, crop: :fill %>
+    <% @superpowers.each do |superpower| %>
+      <li class = "inline"><%= superpower.name %></li>
+      <li class = "inline"><%= superpower.description %></li>
+      <li class = "inline"><b>User:</b><%= superpower.user.name %></li>
+       <li class = "inline"><b>Book:</b> <%= @superpower.user.email %></li>
+  <% end %>
+
 
 <p><%= link_to "See all", superpowers_path %></p>
+
+</div>
