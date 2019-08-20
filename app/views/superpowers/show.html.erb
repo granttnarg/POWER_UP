@@ -11,5 +11,10 @@
 
 
 <p><%= link_to "All Superpowers", superpowers_path, class: 'back-index' %></p>
+<div class="edit-delete">
+  <span> <%= link_to 'Edit', edit_superpower_path, class: 'edit-index'  %></span>
+  <span><%= link_to 'Destroy', superpower_path, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+
+</div>
 
 </div>
