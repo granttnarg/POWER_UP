@@ -1,13 +1,11 @@
-<h1>SUPERPOWERS</h1>
-
-
-<div>
-  <% @superpowers.each do |superpower| %>
-    <h3><%= link_to superpower.name, superpower_path(superpower) %></h3>
-    <ul>
-      <li><%= superpower.description %></li>
-    </ul>
-  <% end %>
-
+<div class="container">
+  <h1 class="text-center" style="padding-top:120px; padding-bottom: 30px;">Choose your SuperPower!</h1>
+  <div class="cards">
+    <% @superpowers.each do |superpower| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path superpower.photo, crop: :fill %>'); height: 200px;">
+        <%= link_to superpower.name, superpower_path(superpower) %>
+      </div>
+    <% end %>
+  </div>
   <p><%= link_to "Create new superpower 🚀", new_superpower_path, class: "btn btn-ghost" %></p>
 </div>
