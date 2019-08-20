@@ -2,11 +2,20 @@
   <h4>
     <strong>Welcome! <%= @user.name %></strong>
   </h4>
+      <div class="my-superpower">
       <p>You have</p>
-      <% @superpowers.each do |superpower| %>
-        <%= superpower.name %>
-        <%= superpower.description %>
-        <p>is rented by <%= superpower.user.name %></p>
-      <p>for following date: <%= superpower.booking.date %></p>
-    <% end %>
+        <% @superpowers.each do |superpower| %>
+          <%= superpower.name %>
+          <%= superpower.description %>
+          <p>is booked by <%= superpower.user.name %></p>
+          <p>on this date : <%= superpower.user.bookings[0].date %></p>
+        <% end %>
+      </div>
+      <div class="my-booking">
+        <p> Your bookings: <% @user.bookings. each do |booking| %>
+        <p> <%= booking.superpower.name %> </p>
+        <p> on the following date : <%= booking.date %></p>
+        </p>
+        <% end %>
+      </div>
 </div>
