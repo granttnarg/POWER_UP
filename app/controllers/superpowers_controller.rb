@@ -1,5 +1,5 @@
 class SuperpowersController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: [:root, :index, :show]
 
   def index
     @superpowers = Superpower.all
@@ -25,8 +25,6 @@ class SuperpowersController < ApplicationController
 
   def destroy
   end
-
-  private
 
   def superpower_params
     params.require(:superpower).permit(:name, :description, :photo)
