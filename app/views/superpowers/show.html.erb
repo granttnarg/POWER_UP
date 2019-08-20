@@ -1,19 +1,18 @@
 <div class="show-conatiner" style="text-align: center;padding-top: 158px;">
   <br>
-  <h1>
+  <h1 style="padding-bottom: 25px;">
     <strong><%= @superpower.name %></strong>
   </h1>
-  <%#= cl_image_tag @superpower.photo, height: 300, crop: :fill %>
-    <%= @superpower.name %>
-    <%= @superpower.description %>
-      <li class = "inline"><p>User name: </p> <%= @superpower.user.name %></li>
-      <li class = "inline"><p>Book: </p> <%= @superpower.user.email %></li>
+  <div><%= cl_image_tag @superpower.photo, height: 300, crop: :fill %></div>
+    <div style="font-size: 40px; padding: 10px;"><%= @superpower.description %></div>
+      <li class = "inline"><p>User name: <%= @superpower.user.name %></p> </li>
+      <li class = "inline"><p>Book: <%= @superpower.user.email %></p> </li>
 
 
-<p><%= link_to "All Superpowers", superpowers_path, class: 'back-index' %></p>
+<p><%= link_to "All Superpowers", superpowers_path, class: 'btn btn-flat' %></p>
 <div class="edit-delete">
-  <span> <%= link_to 'Edit', edit_superpower_path, class: 'edit-index'  %></span>
-  <span><%= link_to 'Destroy', superpower_path, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+  <span> <%= link_to 'Edit', edit_superpower_path, class: 'btn btn-secondary'  %></span> |
+  <span><%= link_to 'Destroy', superpower_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-secondary' %></span>
 
 </div>
 
