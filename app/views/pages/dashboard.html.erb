@@ -1,5 +1,5 @@
-<div class="dashboard-container">
-  <h4>
+<div class="container" style="padding-top: 80px;">
+  <h4 style ="text-align: center;">
     <strong>Welcome to your Dashboard!! <%= @user.name %></strong>
     <br></br>
     </h4>
@@ -21,7 +21,6 @@
   </div>
 
 
-
   <div class="booking-box" style="width: 750px;height: 300px;">
     <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" style="width: 450px;"/>
     <div class="booking-box-info">
@@ -31,20 +30,12 @@
             <% if booking.date < Time.now %>
             <p>Super Power :<%= booking.superpower.name %> </p>
             <p>on the date : <%= booking.date %></p>
-            <span> <%#= link_to 'Leave your review', new_booking_review_path, class: 'review-btn'  %></span>
-            <!-- BUTTON TO REVIEW  -->
+            <span> <%= link_to 'Leave your review', new_booking_review_path(booking), class: 'btn btn-secondary' %></span>
             <% end %>
           <% end  %>
       </div>
     </div>
   </div>
-
-
-
-
-
-
-
 
 
   <div class="booking-box" style="width: 750px;height: 300px;">
