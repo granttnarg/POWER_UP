@@ -19,21 +19,20 @@
             <div class="menu">
               <ul class="navbar-menu">
               <li>
-                <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
-              </li>
-              <li>
                 <%= link_to "Log In", new_user_session_path, class: "nav-link" %>
               </li>
               <li>
-                <%= link_to "Log Out", destroy_user_session_path, class: "nav-link" %>
+                <%= link_to "Log Out", destroy_user_session_path, class: "nav-link", method: :delete %>
               </li>
+              <% if user_signed_in? %>
               <li class="nav-item dropdown">
-                <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
-                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <a class="dropdown-item" href="#">Action</a>
-                    <a class="dropdown-item" href="#">Another action</a>
-                  </div>
+                <%= link_to dashboard_path do %>
+                <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar" %>
+                <% end %>
               </li>
+              <% end %>
+
+
               </ul>
             </div>
           </div>
