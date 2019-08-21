@@ -2,6 +2,11 @@
 <div class="pt-5">
   <%= simple_form_for [@superpower, @booking] do |f| %>
     <%= f.input :date %>
-    <%= f.submit %>
+    <div align="center">
+      <%= f.submit "Confirm Booking"%>
+    </div>
   <% end %>
+<div align="center">
+  <p><%= link_to "Back to Super Power", superpower_path(@superpower), class: 'btn btn-flat mt-5' %></p>
+  </div>
 </div>
