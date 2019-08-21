@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Mukta+Mahee:200,300,400|Abril+Fatface:400,700" rel="stylesheet">
-    <title>TODO</title>
+    <title>Power Up!</title>
     <%= csrf_meta_tags %>
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
@@ -14,15 +14,18 @@
   <body>
     <header class="site-header" style="padding: 18px">
         <div class="nav-row">
-          <div class="col-4 site-logo" data-aos="fade" ><a href="/home" class="animsition-link">PowerUp</a></div>
+          <div class="col-4 site-logo" data-aos="fade" ><%= link_to "PowerUp", root_path, class: "animsition-link"  %></div>
           <div class="col-8">
             <div class="menu">
               <ul class="navbar-menu">
               <li>
-                <a class="nav-link" href="#">Booking</a>
+                <%= link_to "Sign Up", new_user_registration_path, class: "nav-link" %>
               </li>
               <li>
-                <a class="nav-link" href="#">Messages</a>
+                <%= link_to "Log In", new_user_session_path, class: "nav-link" %>
+              </li>
+              <li>
+                <%= link_to "Log Out", destroy_user_session_path, class: "nav-link" %>
               </li>
               <li class="nav-item dropdown">
                 <img class="avatar dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" src="https://kitt.lewagon.com/placeholder/users/ssaunier" />
