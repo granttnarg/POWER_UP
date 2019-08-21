@@ -1,19 +1,24 @@
 <div class="show-conatiner" style="text-align: center;padding-top: 158px;">
-  <br>
-  <h1 style="padding-bottom: 25px;">
-    <strong><%= @superpower.name %></strong>
-  </h1>
-  <div><%= cl_image_tag @superpower.photo, height: 300, crop: :fill %></div>
-    <div style="font-size: 40px; padding: 10px;"><%= @superpower.description %></div>
-      <li class = "inline"><p>User name: <%= @superpower.user.name %></p> </li>
-      <li class = "inline"><p>Book: <%= @superpower.user.email %></p> </li>
+    <br>
+      <h1 style="padding-bottom: 25px;">
+        <strong><%= @superpower.name %></strong>
+      </h1>
+        <div><%= cl_image_tag @superpower.photo, height: 300, crop: :fill %>
+        </div>
+        <div style="font-size: 40px; padding: 10px;"><%= @superpower.description %>
+        </div>
+          <li class = "inline"><p>User name: <%= @superpower.user.name %></p>
+          </li>
+          <li class = "inline">
+            <p>Book: <%= @superpower.user.email %></p>
+          </li>
 
+  <p><%= link_to "Click to make a Booking", new_superpower_booking_path(@superpower), class: 'btn btn-flat' %></p>
+  <p><%= link_to "All Superpowers", superpowers_path, class: 'btn btn-flat' %></p>
+  <div class="edit-delete">
+    <span> <%= link_to 'Edit', edit_superpower_path, class: 'btn btn-secondary'  %></span> |
+    <span><%= link_to 'Destroy', superpower_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-secondary' %></span>
 
-<p><%= link_to "All Superpowers", superpowers_path, class: 'btn btn-flat' %></p>
-<div class="edit-delete">
-  <span> <%= link_to 'Edit', edit_superpower_path, class: 'btn btn-secondary'  %></span> |
-  <span><%= link_to 'Destroy', superpower_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-secondary' %></span>
+  </div>
 
-</div>
-
-</div>
+  </div>
