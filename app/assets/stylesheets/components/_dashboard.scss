@@ -4,7 +4,12 @@
   width: 900px;
 }
 
-
+.btn {
+  font-size:12px;
+  background-color:transparent;
+  border: 2px solid lightgrey;
+  color: lightgrey;
+}
 .booking-box {
   overflow: hidden;
   height: 120px;
@@ -12,6 +17,7 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
+  margin: 0 auto;
 }
 
 .booking-box img {
