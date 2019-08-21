@@ -18,6 +18,7 @@ class SuperpowersController < ApplicationController
   def create
     @superpower = Superpower.new(superpower_params)
     @superpower.user = current_user
+    @superpower.availability = true
     if @superpower.save
       redirect_to superpowers_path
     else
