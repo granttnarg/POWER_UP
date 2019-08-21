@@ -29,9 +29,9 @@
           <h4>Your past bookings:</h4>
           <% @user.bookings.each do |booking| %>
             <% if booking.date < Time.now %>
-            <p><%= booking.superpower.name %> </p>
-            <p> on the date : <%= booking.date %></p>
-            <span> <%= link_to 'Leave your review', new_booking_review_path, class: 'review-btn'  %></span>
+            <p>Super Power :<%= booking.superpower.name %> </p>
+            <p>on the date : <%= booking.date %></p>
+            <span> <%#= link_to 'Leave your review', new_booking_review_path, class: 'review-btn'  %></span>
             <!-- BUTTON TO REVIEW  -->
             <% end %>
           <% end  %>
@@ -54,8 +54,8 @@
           <h4> Your upcoming bookings:</h4>
             <% @user.bookings.each do |booking| %>
               <% if booking.date > Time.now %>
-              <p> <%= booking.superpower.name %> </p>
-              <p> on the date : <%= booking.date %></p>
+              <p>Super Power :<%= booking.superpower.name %> </p>
+              <p>on the date : <%= booking.date %></p>
               <span><%= link_to 'Destroy', dashboard_path, method: :delete, data: { confirm: 'Are you sure?' } %></span>
   <!--            DELETE BOOKING BTN -->
             <% end %>
