@@ -1,0 +1,41 @@
+.dashboard-container{
+  margin: 10px auto;
+  padding-top:140px;
+  width: 900px;
+}
+
+
+.booking-box {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+}
+
+.booking-box img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.booking-box h4 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+ .booking-box p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+.booking-box,.booking-box-info {
+  padding: 16px;
+}
+
+

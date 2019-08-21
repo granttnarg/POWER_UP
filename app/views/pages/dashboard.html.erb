@@ -1,21 +1,61 @@
-<div class="dashboard-container">
-  <h4>
-    <strong>Welcome! <%= @user.name %></strong>
-  </h4>
-      <div class="my-superpower">
-      <p>You have</p>
-        <% @superpowers.each do |superpower| %>
-          <%= superpower.name %>
-          <%= superpower.description %>
+<div class="container" style="padding-top: 80px;">
+  <h4 style ="text-align: center;">
+    <strong>Welcome to your Dashboard!! <%= @user.name %></strong>
+    <br></br>
+    </h4>
+
+<div class="whole-box">
+  <div class="booking-box" style="width: 750px;height: 300px;">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" style="width: 450px;"/>
+    <div class="booking-box-info">
+      <div>
+          <h4>Your Superpowers</h4>
+          <% @superpowers.each do |superpower| %>
+          <p>Super Power : <%= superpower.name %></p>
+          <p>Description : <%= superpower.description %></p>
           <p>is booked by <%= superpower.user.name %></p>
           <p>on this date : <%= superpower.user.bookings[0].date %></p>
         <% end %>
       </div>
-      <div class="my-booking">
-        <p> Your bookings: <% @user.bookings. each do |booking| %>
-        <p> <%= booking.superpower.name %> </p>
-        <p> on the following date : <%= booking.date %></p>
-        </p>
-        <% end %>
+    </div>
+  </div>
+
+
+  <div class="booking-box" style="width: 750px;height: 300px;">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" style="width: 450px;"/>
+    <div class="booking-box-info">
+      <div>
+          <h4>Your past bookings:</h4>
+          <% @user.bookings.each do |booking| %>
+            <% if booking.date < Time.now %>
+            <p>Super Power :<%= booking.superpower.name %> </p>
+            <p>on the date : <%= booking.date %></p>
+            <span> <%= link_to 'Leave your review', new_booking_review_path(booking), class: 'btn btn-secondary' %></span>
+            <% end %>
+          <% end  %>
       </div>
+    </div>
+  </div>
+
+
+  <div class="booking-box" style="width: 750px;height: 300px;">
+    <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" style="width: 450px;"/>
+    <div class="booking-box-info">
+      <div>
+          <h4> Your upcoming bookings:</h4>
+            <% @user.bookings.each do |booking| %>
+              <% if booking.date > Time.now %>
+              <p>Super Power :<%= booking.superpower.name %> </p>
+              <p>on the date : <%= booking.date %></p>
+              <span><%= link_to 'Destroy', dashboard_path, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+  <!--            DELETE BOOKING BTN -->
+            <% end %>
+          <% end %>
+      </div>
+    </div>
+  </div>
 </div>
+</div>
+
+
+
