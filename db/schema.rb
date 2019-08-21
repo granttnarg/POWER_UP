@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2019_08_21_123315) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "photo"
+    t.boolean "availability"
     t.index ["user_id"], name: "index_superpowers_on_user_id"
   end
 

@@ -20,5 +20,15 @@
     <span><%= link_to 'Destroy', superpower_path, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-secondary' %></span>
 
   </div>
+  <div>
+    <h2>Reviews:</h2>
+    <p>
+      <% @superpower.reviews.each do |review| %>
+        <%= "#{review.rating} stars" %>
+        <%= "\"#{review.description}\"" %>
+      <%end%>
+    </p>
+
+  </div>
 
   </div>
