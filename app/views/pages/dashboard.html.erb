@@ -47,7 +47,7 @@
               <% if booking.date > Time.now %>
               <p>Super Power :<%= booking.superpower.name %> </p>
               <p>on the date : <%= booking.date %></p>
-              <span><%= link_to 'Destroy', dashboard_path, method: :delete, data: { confirm: 'Are you sure?' } %></span>
+              <span><%= link_to 'Destroy', booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' } %></span>
   <!--            DELETE BOOKING BTN -->
             <% end %>
           <% end %>
