@@ -1,3 +1,30 @@
+    <header class="site-header" style="padding: 18px">
+        <div class="nav-row">
+          <div class="col-4 site-logo" data-aos="fade" ><%= link_to "PowerUp", root_path, class: "animsition-link"  %></div>
+          <div class="col-8">
+            <div class="menu">
+              <ul class="navbar-menu">
+              <li>
+                <%= link_to "Log In", new_user_session_path, class: "nav-link" %>
+              </li>
+              <li>
+                <%= link_to "Log Out", destroy_user_session_path, class: "nav-link", method: :delete %>
+              </li>
+              <% if user_signed_in? %>
+              <li class="nav-item dropdown">
+                <%= link_to dashboard_path do %>
+                <%= image_tag "http://morrisinsurancegroup.com/wp-content/uploads/2018/01/blank-avatar.png", class: "avatar" %>
+                <% end %>
+              </li>
+              <% end %>
+
+
+              </ul>
+            </div>
+          </div>
+        </div>
+  </header>
+
     <section class="site-hero overlay" style="background-image: url(https://images.unsplash.com/photo-1531907700752-62799b2a3e84?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80)">
       <div class="container">
         <div class="row site-hero-inner justify-content-center align-items-center">
