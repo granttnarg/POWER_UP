@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :superpowers, only: [:index, :show, :new, :create, :edit, :update, :destroy] do
     resources :bookings, only: [:new, :create]
   end
-  resources :bookings, only: [:destroy] do
+  resources :bookings, only: [:destroy, :edit, :update] do
     resources :reviews, only: [:new, :create]
   end
   devise_for :users

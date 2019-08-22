@@ -4,12 +4,15 @@
   width: 900px;
 }
 
+
 .btn {
-  font-size:12px;
-  background-color:transparent;
-  border: 2px solid lightgrey;
-  color: lightgrey;
+  font-size: 18px;
+  border: solid 2px #001eec;
+  color: #001eec;padding: 8px 24px;
+  border-radius: 5px;
+  background-color: white;
 }
+
 .booking-box {
   overflow: hidden;
   height: 120px;

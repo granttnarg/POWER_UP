@@ -1,0 +1,8 @@
+<h2>Edit <%= @booking.user.name %></h2>
+<div class=“pt-10”>
+ <%= simple_form_for @booking do |f| %>
+   <%= f.input :date %>
+   <%= f.submit %>
+ <% end %>
+</div>
+
