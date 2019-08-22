@@ -1,11 +1,14 @@
-<div class="show-conatiner" style="text-align: center;padding-top: 158px;">
+<%= render 'shared/navbar' %>
+<div class="show-conatiner" style="text-align: center;padding-top: 95px;">
     <br>
       <h1 style="padding-bottom: 25px;">
         <strong><%= @superpower.name %></strong>
       </h1>
         <div><%= cl_image_tag @superpower.photo, height: 300, crop: :fill %>
         </div>
-        <div style="font-size: 40px; padding: 10px;"><%= @superpower.description %>
+        <div style="font-size: 40px; padding: 5px;"><%= @superpower.description %>
+        </div>
+        <div style="font-size: 40px; padding: 5px;"><%= "€#{@superpower.price} per day" %>
         </div>
           <li class = "inline"><p>User name: <%= @superpower.user.name %></p>
           </li>
@@ -13,8 +16,8 @@
             <p>Book: <%= @superpower.user.email %></p>
           </li>
 
-  <p><%= link_to "Click to make a Booking", new_superpower_booking_path(@superpower), class: 'btn btn-flat' %></p>
-  <p><%= link_to "All Superpowers", superpowers_path, class: 'btn btn-flat' %></p>
+  <p><%= link_to "Click to make a Booking", new_superpower_booking_path(@superpower), class: 'btn btn-secondary' %></p>
+  <p><%= link_to "Back to All Superpowers", superpowers_path, class: 'btn btn-outline-dark' %></p>
   <div class="edit-delete">
 
   </div>

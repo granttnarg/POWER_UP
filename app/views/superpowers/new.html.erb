@@ -1,12 +1,14 @@
+<%= render 'shared/navbar' %>
 <div class="container">
   <h2 class="text-center" style="padding-top: 90px;">Create your own SuperPower!</h2>
   <div class="pt-5">
   <%= simple_form_for @superpower do |f| %>
     <%= f.input :name %>
     <%= f.input :description %>
+    <%= f.input :price, as: :numeric %>
     <%= f.input :photo %>
     <%= f.input :photo_cache, as: :hidden %>
-    <%= f.submit "Create SuperPower", class: "btn btn-success", style: "color: white" %>
+    <%= f.submit "Create SuperPower", class: "btn btn-secondary", style: "color: white" %>
   <% end %>
 </div>
 </div>

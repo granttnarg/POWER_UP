@@ -1,15 +1,26 @@
+<%= render 'shared/navbar' %>
+
 <div class="container">
   <h1 class="text-center" style="padding-top:120px; padding-bottom: 30px;">Choose your SuperPower!</h1>
   <div class="cards">
     <% @superpowers.each do |superpower| %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path superpower.photo, crop: :fill %>'); height: 200px;">
         <%= link_to superpower.name, superpower_path(superpower) %>
+        <div id="price">
+          <% if superpower.price >= 101 %>
+            <%= "€€€"%>
+          <% elsif superpower.price > 51 && superpower.price < 101 %>
+            <%= "€€"%>
+          <% elsif superpower.price < 51 && superpower.price >= 0 %>
+            <%= "€"%>
+            <% end %>
+        </div>
       </div>
     <% end %>
   </div>
   <br>
   <br>
 
-  <div class="text-center"><span class="btn btn-primary text-center" style="margin: 0 auto;"><%= link_to "Create new superpower 🚀", new_superpower_path %></span>
+  <div class="text-center"><span class="btn btn-secondary text-center" style="margin: 0 auto;"><%= link_to "Create new superpower 🚀", new_superpower_path, style: "color: white;" %></span>
   </div>
 </div>

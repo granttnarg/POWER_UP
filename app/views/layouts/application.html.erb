@@ -12,32 +12,7 @@
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
   </head>
   <body>
-    <header class="site-header" style="padding: 18px">
-        <div class="nav-row">
-          <div class="col-4 site-logo" data-aos="fade" ><%= link_to "PowerUp", root_path, class: "animsition-link"  %></div>
-          <div class="col-8">
-            <div class="menu">
-              <ul class="navbar-menu">
-              <li>
-                <%= link_to "Log In", new_user_session_path, class: "nav-link" %>
-              </li>
-              <li>
-                <%= link_to "Log Out", destroy_user_session_path, class: "nav-link", method: :delete %>
-              </li>
-              <% if user_signed_in? %>
-              <li class="nav-item dropdown">
-                <%= link_to dashboard_path do %>
-                <%= image_tag "http://morrisinsurancegroup.com/wp-content/uploads/2018/01/blank-avatar.png", class: "avatar" %>
-                <% end %>
-              </li>
-              <% end %>
 
-
-              </ul>
-            </div>
-          </div>
-        </div>
-  </header>
 
 
     <%= yield %>
