@@ -9,6 +9,7 @@ class BookingsController < ApplicationController
     @superpower = Superpower.find(params[:superpower_id])
     @booking.user = current_user
     @booking.superpower = @superpower
+    @booking.date if valid_dates
     if @booking.save
       redirect_to superpower_path(@superpower)
     else
@@ -34,6 +35,15 @@ class BookingsController < ApplicationController
     @booking.destroy
     redirect_to dashboard_path
   end
+
+  def valid_dates
+    today = Date.today
+    if @booking.date < today
+      false
+    else
+      true
+   end
+ end
 
 private
 
