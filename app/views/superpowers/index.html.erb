@@ -4,6 +4,15 @@
     <% @superpowers.each do |superpower| %>
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path superpower.photo, crop: :fill %>'); height: 200px;">
         <%= link_to superpower.name, superpower_path(superpower) %>
+        <div id="price">
+          <% if superpower.price >= 101 %>
+            <%= "€€€"%>
+          <% elsif superpower.price > 51 && superpower.price < 101 %>
+            <%= "€€"%>
+          <% elsif superpower.price < 51 && superpower.price >= 0 %>
+            <%= "€"%>
+            <% end %>
+        </div>
       </div>
     <% end %>
   </div>
