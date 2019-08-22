@@ -7,4 +7,5 @@ class Superpower < ApplicationRecord
   validates :photo, presence: true
   validates :price, numericality: { only_integer: true }
   mount_uploader :photo, PhotoUploader
+  searchkick text_middle: [:name, :price]
 end
