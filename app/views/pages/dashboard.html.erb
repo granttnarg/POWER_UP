@@ -36,7 +36,7 @@
   <div class="booking-box" style="width: 750px;height: 300px;">
     <div class="booking-box-info">
       <div>
-          <h4>Your past bookings:</h4>
+          <h4>Your past bookings!:</h4>
           <% @user.bookings.each do |booking| %>
             <% if booking.date < Time.now %>
             <p>Super Power :<%= booking.superpower.name %> </p>
