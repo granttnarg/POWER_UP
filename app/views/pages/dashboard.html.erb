@@ -3,8 +3,9 @@
     <strong>Welcome to your Dashboard!!</strong>
     <br>
       <p><%= @user.name %></p>
+      <p><%= @user.bio %></p>
     </h4>
-    <p class="text-center"><%= link_to "Edit profile", edit_user_path(@user), class: "btn btn-ghost" %></p>
+    <p class="text-center"><%= link_to "Edit profile", edit_user_path(@user), class: "btn btn-secondary" %></p>
 
 <div class="whole-box">
   <div class="booking-box" style="width: 750px;height: 300px;">
@@ -31,7 +32,7 @@
             <% if booking.date < Time.now %>
             <p>Super Power :<%= booking.superpower.name %> </p>
             <p>on the date : <%= booking.date %></p>
-            <span> <%= link_to 'Leave your review', new_booking_review_path(booking), class: 'btn btn-secondary' %></span>
+            <span> <%= link_to 'Leave Review', new_booking_review_path(booking), class: 'btn btn-secondary' %></span>
             <% end %>
           <% end  %>
       </div>
@@ -47,8 +48,8 @@
               <% if booking.date > Time.now %>
               <p>Super Power :<%= booking.superpower.name %> </p>
               <p>on the date : <%= booking.date %></p>
-              <span><%= link_to 'Destroy', booking_path(booking), method: :delete, data: { confirm: 'Are you sure?' } %></span>
-  <!--            DELETE BOOKING BTN -->
+              <span><%= link_to 'Edit', edit_booking_path(booking), class: 'btn btn-secondary'%></span>
+              <span><a data-confirm="Are you sure?" data-class="btn btn-secondary" rel="nofollow" data-method="delete" href="/bookings/6" style="border: solid 2px #001eec;color: #001eec;padding: 8px 24px;border-radius: 5px;">Destroy</a></span>
             <% end %>
           <% end %>
       </div>
