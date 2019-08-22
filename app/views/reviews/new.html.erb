@@ -1,11 +1,12 @@
 <%= render 'shared/navbar' %>
-
-<h1>Make a review!</h1>
+<div class="container">
+<h1 class="text-center" style="padding-top: 150px;">Make a review!</h1>
 
 <div class="pt-5">
   <%= simple_form_for [@booking, @review] do |f| %>
     <%= f.input :rating, collection: [0, 1, 2, 3, 4, 5] %>
-    <%= f.input :description %>
-    <%= f.submit "Add review", class: "btn" %>
+    <%= f.input :description, class: "text-left" %>
+    <div class="container text-center"><%= f.submit("Add review", class: "btn btn-secondary text-center") %></div>
   <% end %>
+</div>
 </div>
