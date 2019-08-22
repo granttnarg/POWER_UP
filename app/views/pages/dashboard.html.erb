@@ -35,7 +35,7 @@
               <p>Super Power :<%= booking.superpower.name %> </p>
               <p>on the date : <%= booking.date %></p>
               <span><%= link_to 'Edit', edit_booking_path(booking), class: 'btn btn-secondary'%></span>
-              <span><%= link_to 'Destroy', booking_path(booking), method: :delete, data: {confirm: 'Are you sure?' } %></span>
+              <span><a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/bookings/<%= booking.id %>">Destroy</a></span>
             <% end %>
           <% end %>
     </div>
