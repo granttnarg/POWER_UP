@@ -25,7 +25,7 @@
 
   <div class="cards">
     <% @superpowers.each do |superpower| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path superpower.photo, crop: :fill %>'); height: 200px;">
+      <div class="card-category" style="z-index: 100; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path superpower.photo, crop: :fill %>'); height: 200px;">
         <%= link_to superpower.name, superpower_path(superpower) %>
         <div id="price">
           <% if superpower.price >= 101 %>
@@ -42,6 +42,7 @@
 
   <br>
   <br>
+
   <div class="text-center"><span class="btn btn-secondary text-center" style="margin: 0 auto;"><%= link_to "Create new superpower 🚀", new_superpower_path, style: "color: white;" %></span>
   </div>
 </div>

@@ -1,13 +1,16 @@
 <%= render 'shared/navbar' %>
+
 <h2>Pick your date to book "<%= @superpower.name%>"</h2>
-<div class="pt-5">
+<div class="pt-5" style="z-index: 100;padding-top: 400px; margin-top: 200px;">
   <%= simple_form_for [@superpower, @booking] do |f| %>
     <%= f.input :date %>
     <div align="center">
-      <%= f.submit "Confirm Booking"%>
+      <%= f.submit("Confirm Booking", class: "btn btn-secondary mt-2") %>
     </div>
   <% end %>
-<div align="center">
-  <p><%= link_to "Back to Super Power", superpower_path(@superpower), class: 'btn btn-flat mt-5' %></p>
+
+    <div align="center">
+      <p><%= link_to "Back to SuperPowers", superpower_path(@superpower), class: 'btn btn-outline-dark mt-5' %></p>
+    </div>
   </div>
 </div>
