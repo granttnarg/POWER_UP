@@ -5,14 +5,15 @@ class SuperpowersController < ApplicationController
     Superpower.reindex
     @superpowers = Superpower.all
     @superpowers = Superpower.search(params[:query], fields: [:name], match: :text_middle, misspellings: false) if params[:query].present?
-      if params[:range] == 100
+
+      if params[:range] == "100"
         @superpowers = @superpowers.select { |superpower| superpower.price > 100 }
-      elsif params[:range] == 50
-        @superpowers = @superpowers.select { |superpower| superpower.price > 50  }
-      elsif params[:range] == 0
+      elsif params[:range] == "50"
+        @superpowers = @superpowers.select { |superpower| superpower.price > 50 && superpower.price < 100  }
+      elsif params[:range] == "0"
         @superpowers = @superpowers.select { |superpower| superpower.price <= 50 && superpower.price > 0}
       else
-        @superpowers = Superpower.all
+        @superpowers
       end
 
 
