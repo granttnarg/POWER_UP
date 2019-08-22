@@ -13,7 +13,7 @@
               <% if user_signed_in? %>
               <li class="nav-item dropdown">
                 <%= link_to dashboard_path do %>
-                <%= image_tag "http://morrisinsurancegroup.com/wp-content/uploads/2018/01/blank-avatar.png", class: "avatar" %>
+                <%= cl_image_tag current_user.photo, height: 300, crop: :fill, class: "avatar" %>
                 <% end %>
               </li>
               <% end %>
