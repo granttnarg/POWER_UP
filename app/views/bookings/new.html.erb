@@ -1,7 +1,7 @@
 <%= render 'shared/navbar' %>
-
-<h2>Pick your date to book "<%= @superpower.name%>"</h2>
-<div class="pt-5" style="z-index: 100;padding-top: 400px; margin-top: 200px;">
+<div class="container">
+<h2 style="padding-top: 130px;">Pick your date to book "<%= @superpower.name%>"</h2>
+<div class="pt-1">
   <%= simple_form_for [@superpower, @booking] do |f| %>
     <%= f.input :date %>
     <div align="center">
@@ -10,7 +10,8 @@
   <% end %>
 
     <div align="center">
-      <p><%= link_to "Back to SuperPowers", superpower_path(@superpower), class: 'btn btn-outline-dark mt-5' %></p>
+      <p><%= link_to "Back to SuperPowers", superpower_path(@superpower), class: 'btn btn-outline-dark mt-4' %></p>
     </div>
   </div>
+</div>
 </div>
