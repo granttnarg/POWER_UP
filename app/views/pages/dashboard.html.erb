@@ -1,8 +1,10 @@
 <div class="container" style="padding-top: 80px;">
   <h4 style ="text-align: center;">
-    <strong>Welcome to your Dashboard!! <%= @user.name %></strong>
-    <br></br>
+    <strong>Welcome to your Dashboard!!</strong>
+    <br>
+      <p><%= @user.name %></p>
     </h4>
+    <p class="text-center"><%= link_to "Edit profile", edit_user_path(@user), class: "btn btn-ghost" %></p>
 
 <div class="whole-box">
   <div class="booking-box" style="width: 750px;height: 300px;">

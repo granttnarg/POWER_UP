@@ -1,0 +1,13 @@
+<h1>Edit your profile:</h1>
+<div class=“pt-10”>
+ <%= simple_form_for @user do |f| %>
+   <%= f.input :name %>
+   <%= f.input :bio %>
+   <%= f.input :email %>
+   <%= f.input :photo %>
+   <%= f.input :photo_cache, as: :hidden %>
+   <%= f.submit %>
+ <% end %>
+
+ <p><%= link_to "Go back", dashboard_path, class: 'btn btn-flat mt-5' %></p>
+</div>
