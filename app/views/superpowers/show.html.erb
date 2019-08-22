@@ -25,9 +25,17 @@
     <h2>Reviews:</h2>
     <p>
       <% @superpower.reviews.each do |review| %>
-        <%= "#{review.rating} stars" %>
+        <% review.rating.times do  %>
+          <span class="fas fa-star"></span>
+        <% end %>
+        <% review.blank_stars.times do  %>
+          <span class="far fa-star"></span>
+        <% end %>
+        <br />
         <%= "\"#{review.description}\"" %>
-      <%end%>
+      <br />
+      <br />
+      <% end%>
     </p>
 
   </div>
