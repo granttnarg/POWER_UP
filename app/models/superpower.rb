@@ -5,5 +5,6 @@ class Superpower < ApplicationRecord
   has_many :reviews, through: :bookings
   validates :name, presence: true
   validates :photo, presence: true
+  validates :price, numericality: { only_integer: true }
   mount_uploader :photo, PhotoUploader
 end

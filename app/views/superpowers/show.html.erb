@@ -5,7 +5,9 @@
       </h1>
         <div><%= cl_image_tag @superpower.photo, height: 300, crop: :fill %>
         </div>
-        <div style="font-size: 40px; padding: 10px;"><%= @superpower.description %>
+        <div style="font-size: 40px; padding: 5px;"><%= @superpower.description %>
+        </div>
+        <div style="font-size: 40px; padding: 5px;"><%= "€#{@superpower.price} per day" %>
         </div>
           <li class = "inline"><p>User name: <%= @superpower.user.name %></p>
           </li>
