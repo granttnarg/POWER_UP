@@ -1,5 +1,5 @@
 <%= render 'shared/navbar' %>
-<div class="show-conatiner" style="text-align: center;padding-top: 158px;">
+<div class="show-conatiner" style="text-align: center;padding-top: 95px;">
     <br>
       <h1 style="padding-bottom: 25px;">
         <strong><%= @superpower.name %></strong>
@@ -16,8 +16,8 @@
             <p>Book: <%= @superpower.user.email %></p>
           </li>
 
-  <p><%= link_to "Click to make a Booking", new_superpower_booking_path(@superpower), class: 'btn btn-flat' %></p>
-  <p><%= link_to "All Superpowers", superpowers_path, class: 'btn btn-flat' %></p>
+  <p><%= link_to "Click to make a Booking", new_superpower_booking_path(@superpower), class: 'btn btn-secondary' %></p>
+  <p><%= link_to "Back to All Superpowers", superpowers_path, class: 'btn btn-outline-dark' %></p>
   <div class="edit-delete">
 
   </div>
