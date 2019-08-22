@@ -6,18 +6,19 @@
   <div class="search d-flex">
 
   <%= form_tag superpowers_path, method: :get, class: 'search-form text-center' do %>
+
   <%= text_field_tag :query,
     params[:query],
     class: "form-control",
     placeholder: "Did you have something in mind?"
   %>
+
   <%#= text_field_tag :price,
     params[:price],
     class: "form-control",
     placeholder: "Price?"
   %>
-
-<%# select_tag(name, option_tags = nil, options = {}) %>
+<%= select_tag :range, raw("<option>Price</option><option value='0'>€ (0-50)</option><option value='50'>€€ (50 -100)</option><option value='100'>€€€ (100+)</option>")%>
   <%= submit_tag "Search", class: "btn btn-primary" %>
   <% end %>
 
@@ -27,7 +28,7 @@
     <% @superpowers.each do |superpower| %>
       <div class="card-category" style="z-index: 100; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path superpower.photo, crop: :fill %>'); height: 200px;">
         <%= link_to superpower.name, superpower_path(superpower) %>
-        <div id="price">
+        <div id="price-card">
           <% if superpower.price >= 101 %>
             <%= "€€€"%>
           <% elsif superpower.price > 51 && superpower.price < 101 %>
