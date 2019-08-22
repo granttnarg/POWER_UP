@@ -2,7 +2,10 @@ class SuperpowersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:root, :index, :show]
 
   def index
+    Superpower.reindex
     @superpowers = Superpower.all
+    @superpowers = Superpower.search(params[:query], fields: [:name], match: :text_middle, misspellings: false) if params[:query].present?
+    @superpowers = Superpower.search(params[:price], fields: [:price], match: :text_middle, misspellings: false) if params[:price].present?
   end
 
   def show
