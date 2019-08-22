@@ -13,6 +13,18 @@
                   <%= link_to "Log In", new_user_session_path, class: "nav-link" %>
                 </li>
               <% end %>
+                <% if user_signed_in? %>
+                  <li class="nav-item dropdown">
+                  <%= link_to dashboard_path do %>
+                    <% if current_user.photo? %>
+                      <%= cl_image_tag current_user.photo, height: 50, crop: :fill, class: "avatar" %>
+                    <% else %>
+                      <%= image_tag"http://morrisinsurancegroup.com/wp-content/uploads/2018/01/blank-avatar.png", class: 'avatar' %>
+                    <% end %>
+                  <% end %>
+                </li>
+              <% end %>
+
               </ul>
             </div>
           </div>
