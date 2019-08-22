@@ -48,6 +48,7 @@ class SuperpowersController < ApplicationController
     redirect_to superpowers_path
   end
 
+
   private
 
   def set_superpower
