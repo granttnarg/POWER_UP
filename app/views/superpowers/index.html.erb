@@ -1,7 +1,28 @@
 <%= render 'shared/navbar' %>
 
-<div class="container">
+  <div class="container">
   <h1 class="text-center" style="padding-top:120px; padding-bottom: 30px;">Choose your SuperPower!</h1>
+
+  <div class="search d-flex">
+
+  <%= form_tag superpowers_path, method: :get, class: 'search-form text-center' do %>
+  <%= text_field_tag :query,
+    params[:query],
+    class: "form-control",
+    placeholder: "Did you have something in mind?"
+  %>
+  <%#= text_field_tag :price,
+    params[:price],
+    class: "form-control",
+    placeholder: "Price?"
+  %>
+
+<%# select_tag(name, option_tags = nil, options = {}) %>
+  <%= submit_tag "Search", class: "btn btn-primary" %>
+  <% end %>
+
+  </div>
+
   <div class="cards">
     <% @superpowers.each do |superpower| %>
       <div class="card-category" style="z-index: 100; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path superpower.photo, crop: :fill %>'); height: 200px;">
@@ -18,9 +39,11 @@
       </div>
     <% end %>
   </div>
+
   <br>
   <br>
 
   <div class="text-center"><span class="btn btn-secondary text-center" style="margin: 0 auto;"><%= link_to "Create new superpower 🚀", new_superpower_path, style: "color: white;" %></span>
   </div>
 </div>
+
