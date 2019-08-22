@@ -7,6 +7,7 @@
 .card-category {
   background-size: cover;
   background-position: center;
+  position: relative;
   height: 180px;
   display: flex;
   justify-content: center;
@@ -17,6 +18,15 @@
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   border-radius: 5px;
   box-shadow: 10px 10px 55px -21px rgba(0,0,0,0.75);
+
+}
+
+#price {
+  position: absolute;
+  top: 150px;
+  bottom: 0px;
+  left: 240px;
+  right:0px;
 
 }
 .card-category a {
