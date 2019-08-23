@@ -3,18 +3,21 @@
 <div class="container" style="padding-top: 80px;">
   <h4 style ="text-align: center;">
     <strong>Welcome to your Dashboard!!</strong>
+  </h4>
     <br>
-      <p><%= @user.name %></p>
-      <p><%= @user.bio %></p>
-    </h4>
+      <div class="name-bio" style="text-align: center;">
+        <p><%= @user.name %></p>
+        <p><%= @user.bio %></p>
+      </div>
+
     <p class="text-center"><%= link_to "Edit profile", edit_user_path(@user), class: "btn btn-secondary" %></p>
-</div>
+
 
 
 <div class="whole-box">
-  <div class="booking-box" style="width: 750px;height: 300px;">
+  <div class="booking-box-1" style="width: 750px;height: 300px;">
     <img src="https://images.unsplash.com/photo-1531907700752-62799b2a3e84?ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=80" style="width: 450px;"/>
-    <div class="booking-box-info">
+    <div class="booking-box-info-super">
       <div>
         <h4>Your Superpowers</h4>
         <% @superpowers.each do |superpower| %>
@@ -26,6 +29,7 @@
           <% else %>
             <p>on this date : <%= superpower.user.bookings[0].date %></p>
           <% end %>
+        <% end %>
 
       </div>
     </div>
@@ -34,8 +38,10 @@
 
 
   <div class="booking-box" style="width: 750px;height: 300px;">
+
+
     <div class="booking-box-info">
-      <div>
+      <div class = "index">
           <h4>Your past bookings!:</h4>
           <% @user.bookings.each do |booking| %>
             <% if booking.date < Time.now %>
@@ -50,17 +56,18 @@
 
 
     <div class="booking-box" style="width: 750px;height: 300px;">
-      <div class="booking-box-info">
-          <h4> Your upcoming bookings!:</h4>
+          <h4 style="text-align: center;"> Your upcoming bookings</h4>
+          <div class="booking-box-info">
             <% @user.bookings.each do |booking| %>
+            <div class = "index">
               <% if booking.date > Time.now %>
                 <p>Super Power :<%= booking.superpower.name %> </p>
                 <p>on the date : <%= booking.date %></p>
                 <span><%= link_to 'Edit', edit_booking_path(booking), class: 'btn btn-secondary'%></span>
                 <span><a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="/bookings/<%= booking.id %>">Destroy</a></span>
               <% end %>
-            <% end %>
-        </div>
+              <% end %>
+            </div>
+      </div>
     </div>
-  </div>
-
+</div>
