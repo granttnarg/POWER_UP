@@ -30,6 +30,7 @@ class SuperpowersController < ApplicationController
   def show
     @superpower = Superpower.find(params[:id])
     @bookings = Booking.where(superpower_id: params[:id])
+    @booking = Booking.new
     # @bookings = @superpower.bookings
   end
 
