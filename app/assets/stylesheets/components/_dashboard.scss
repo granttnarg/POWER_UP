@@ -23,7 +23,13 @@
   align-items: center;
   margin: 14 auto;
 }
+.booking-view {
+  display: flex;
+}
+.detail {
+  padding: 8px 8px;
 
+}
 .index {
   margin: 0 auto;
   height: 240px;
@@ -31,6 +37,15 @@
   border: solid 2px lightblue;
   display: flex;
 
+}
+
+.booking-box {
+  margin: auto;
+}
+
+.review-button {
+  padding-right: 16px;
+  padding-top: 16px;
 }
 
 .booking-box-info {

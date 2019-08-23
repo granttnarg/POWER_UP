@@ -30,13 +30,13 @@ class SuperpowersController < ApplicationController
   end
 
   def edit
-    set_superpower
+    @superpower = Superpower.find(params[:id])
   end
 
   def update
-    set_superpower
+    @superpower = Superpower.find(params[:id])
     if @superpower.update(superpower_params)
-      redirect_to superpowers_path
+      redirect_to dashboard_path
     else
       render :edit
     end
@@ -45,7 +45,7 @@ class SuperpowersController < ApplicationController
   def destroy
     set_superpower
     @superpower.destroy
-    redirect_to superpowers_path
+    redirect_to dashboard_path
   end
 
 
