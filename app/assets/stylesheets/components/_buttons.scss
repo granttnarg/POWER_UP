@@ -25,6 +25,15 @@
   color: white;
 }
 
+.btn.btn-primary {
+  color: blue;
+}
+
+.btn.btn-primary:hover {
+  background-color: blue;
+  color:white;
+
+}
 .btn-gradient {
   color: white;
   padding: 8px 24px;

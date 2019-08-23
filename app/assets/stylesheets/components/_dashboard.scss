@@ -3,7 +3,13 @@
   padding-top:140px;
   width: 900px;
 }
-
+.buttons-box{
+  display: flex;
+  text-align: center;
+  width: 750px;
+  justify-content: space-between;
+  margin: auto;
+}
 .booking-box-1 {
   overflow: hidden;
   height: 120px;
@@ -13,6 +19,26 @@
   align-items: center;
   margin: 14 auto;
 
+}
+#edit-button {
+  height: 20px;
+  line-height: 20px;
+  padding: 15px 25px;
+  border: 1px solid blue;
+  border-radius: 5px;
+}
+.bio-box{
+    color: black;
+    font-size: 18px;
+    padding: 16px 48px;
+    display: flex;
+    margin: 0 auto;
+
+
+}
+
+.user-box{
+  padding-left: 24px;
 }
 .booking-box {
   overflow: hidden;
@@ -26,6 +52,7 @@
 .booking-view {
   display: flex;
 }
+
 .detail {
   padding: 8px 8px;
 
@@ -37,6 +64,12 @@
   border: solid 2px lightblue;
   display: flex;
 
+}
+
+
+#dash-card {
+  width: 150px;
+  height: 75px;
 }
 
 .booking-box {
