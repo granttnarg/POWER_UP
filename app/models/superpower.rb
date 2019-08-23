@@ -7,5 +7,13 @@ class Superpower < ApplicationRecord
   validates :photo, presence: true
   validates :price, numericality: { only_integer: true }
   mount_uploader :photo, PhotoUploader
-  searchkick text_middle: [:name, :price]
+  # searchkick text_middle: [:name, :price]
+
+  include PgSearch::Model
+   pg_search_scope :search_by_name_and_price,
+    against: [ :name, :price, :description ],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
+
 end
