@@ -4,6 +4,19 @@
   grid-gap: 35px;
 }
 
+.card {
+  box-shadow: 10px 10px 55px -21px rgba(0,0,0,0.75);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border-radius: 5px;
+}
+
+.card img {
+  border-radius: 5px 5px 0 0;
+
+}
+
 .card-category {
   background-size: cover;
   background-position: center;
@@ -33,6 +46,7 @@
 .card-category a {
   color: white;
 }
+
 
 // Smallest device
 @media (min-width: 100px) and (max-width: 575px) {
