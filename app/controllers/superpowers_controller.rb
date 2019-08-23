@@ -31,6 +31,14 @@ class SuperpowersController < ApplicationController
     @superpower = Superpower.find(params[:id])
     @bookings = Booking.where(superpower_id: params[:id])
     @booking = Booking.new
+    @power = Superpower.geocoded #returns flats with coordinates
+
+    @markers = @power.map do |flat|
+      {
+        lat: flat.latitude,
+        lng: flat.longitude
+      }
+    end
     # @bookings = @superpower.bookings
   end
 

@@ -10,6 +10,14 @@
         </div>
         <div style="font-size: 40px; padding: 5px;"><%= "€#{@superpower.price} per day" %>
         </div>
+
+          <div
+            id="map"
+            style="width: 100%;
+            height: 600px;"
+            data-markers="<%= @markers.to_json %>"
+            data-mapbox-api-key="MAPBOX_API_KEY=pk.eyJ1IjoiZ3JhbnR0bmFyZyIsImEiOiJjanpvMHA5YTcwMWY1M2hrNmxibGJ6dWNvIn0.aTYaMD12nVdQPYNdmHo4sg>">Map here
+          </div>
   <h3 style="padding-top: 40px;">Unavailable dates:</h3>
   <ul>
     <li class="text-center" style="list-style: none;"><% @superpower.bookings.each do |f| %>
