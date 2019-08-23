@@ -2,9 +2,11 @@ class SuperpowersController < ApplicationController
   skip_before_action :authenticate_user!, only: [:root, :index, :show]
 
   def index
-    Superpower.reindex
+    # Superpower.reindex
     @superpowers = Superpower.all
-    @superpowers = Superpower.search(params[:query], fields: [:name], match: :text_middle, misspellings: false) if params[:query].present?
+    #@superpowers = Superpower.search_by_name_and_price(params[:query])
+
+    @superpowers = Superpower.search_by_name_and_price(params[:query]) if params[:query].present?
 
       if params[:range] == "100"
         @superpowers = @superpowers.select { |superpower| superpower.price > 100 }
@@ -15,7 +17,6 @@ class SuperpowersController < ApplicationController
       else
         @superpowers
       end
-
 
   end
 
