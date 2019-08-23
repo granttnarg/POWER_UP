@@ -4,18 +4,37 @@
       <h1 style="padding-bottom: 25px;">
         <strong><%= @superpower.name %></strong>
       </h1>
-        <div><%= cl_image_tag @superpower.photo, height: 300, crop: :fill %>
+        <div><%= cl_image_tag @superpower.photo, height: 300, crop: :fill, class: "show-image" %>
         </div>
-        <div style="font-size: 40px; padding: 5px;"><%= @superpower.description %>
+        <div class="font-italic pt-5" style="font-size: 25px; padding: 5px; "><%= @superpower.description %>
         </div>
         <div style="font-size: 40px; padding: 5px;"><%= "€#{@superpower.price} per day" %>
         </div>
-  <h3 style="padding-top: 40px;">Unavailable dates:</h3>
+
+          <!-- <div
+            id="map"
+            style="width: 100%;
+            height: 200px;"
+            data-markers="<%= @markers.to_json %>"
+            data-mapbox-api-key="<%=  %>">Map here
+          </div> -->
+
+  <h3 style="padding-top: 40px;">Unavailable dates</h3>
   <ul>
+
+<% if @superpower.bookings.present? %>
     <li class="text-center" style="list-style: none;"><% @superpower.bookings.each do |f| %>
         <div style="color: black; padding-right: 40px;">Booked on <%= f.date %></div>
         <% end %>
     </li>
+
+  <%else%>
+
+    <li class="text-center pt-5" style="list-style: none;">
+        <div style="color: black; padding-right: 40px;">Be the first to make a booking</div>
+    </li>
+  <% end %>
+
   </ul>
 
 
@@ -34,7 +53,8 @@
 
   </div>
   <div>
-    <h2>Reviews:</h2>
+    <h2 class ="pb-5">Reviews:</h2>
+  <% if @superpower.reviews.present? %>
     <p>
       <% @superpower.reviews.each do |review| %>
         <% review.rating.times do  %>
@@ -49,6 +69,11 @@
       <br />
       <% end%>
     </p>
+  <%else%>
+
+  <%#= link_to ‘Go to your Dashboard to make a review’, dashboard_path, class: ‘btn btn-secondary’ %>
+      <p class = "pb-5">Go to your Dashboard to make a review</p>
+  <% end %>
 
   </div>
 
