@@ -8,7 +8,7 @@
 
 puts "deleting db"
 Booking.destroy_all if Rails.env.development?
-Superpower.destroy_all if Rails.env.development?
+Superpower.destroy_all
 User.destroy_all if Rails.env.development?
 
 invisibility_url = "https://images.immediate.co.uk/production/volatile/sites/4/2018/07/GettyImages-98310871-755c868.jpg?quality=45&crop=6px,4px,928px,399px&resize=960,413"
@@ -38,30 +38,6 @@ power_three.save!
 silence_url = "https://wearyourvoicemag.com/wp-content/uploads/2018/02/Webp.net-resizeimage-30-800x512.jpg"
 user_four = User.new(name: "Kaylee", email: "Kaylee@hotmail.com", password:"123456")
 power_four = Superpower.new(name: "To silence people", description: "To shut up all of the chatterboxes", availability: true, price: 25)
-user_four.save!
-power_four.user = user_four
-power_four.remote_photo_url = silence_url
-power_four.save!
-
-silence_url = "https://wearyourvoicemag.com/wp-content/uploads/2018/02/Webp.net-resizeimage-30-800x512.jpg"
-user_four = User.new(name: "Kaylee", email: "Kaylee1@hotmail.com", password:"123456")
-power_four = Superpower.new(name: "To silence animals 1", description: "To shut up all of the chatterboxes", availability: true, price: 25)
-user_four.save!
-power_four.user = user_four
-power_four.remote_photo_url = silence_url
-power_four.save!
-
-silence_url = "https://wearyourvoicemag.com/wp-content/uploads/2018/02/Webp.net-resizeimage-30-800x512.jpg"
-user_four = User.new(name: "Kaylee", email: "Kaylee2@hotmail.com", password:"123456")
-power_four = Superpower.new(name: "To silence people cars 2", description: "To shut up all of the chatterboxes", availability: true, price: 25)
-user_four.save!
-power_four.user = user_four
-power_four.remote_photo_url = silence_url
-power_four.save!
-
-silence_url = "https://wearyourvoicemag.com/wp-content/uploads/2018/02/Webp.net-resizeimage-30-800x512.jpg"
-user_four = User.new(name: "Kaylee", email: "Kaylee3@hotmail.com", password:"123456")
-power_four = Superpower.new(name: "To silence people everything 3", description: "To shut up all of the chatterboxes", availability: true, price: 25)
 user_four.save!
 power_four.user = user_four
 power_four.remote_photo_url = silence_url
