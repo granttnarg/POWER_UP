@@ -1,11 +1,14 @@
 <%= render 'shared/navbar' %>
 <div class="container" style="padding-top: 100px;">
-    <h2 style ="text-align: center;"><strong>Welcome to your Dashboard!!</strong></h2>
+    <h2 style ="text-align: center;"><strong>Your Dashboard</strong></h2>
   <div div class="bio-box " style="width: 900px;padding-bottom: 35px;">
-    <div class="user-box">
-      <h4>Welcome!! <%= @user.name %></h4>
-      <p>Bio: <%= @user.bio %></p>
+
+    <div class="user-box text-center">
+      <h4>Welcome <%= @user.name %></h4>
+      <h5 class="text-center pt-5">Bio</h5>
+      <p class ="text-center">Bio <%= @user.bio %></p>
     </div>
+
   </div>
   <div class="buttons-box">
       <p class="text-center"><%= link_to "Edit profile", edit_user_path(@user), id: "edit-button" %></p>
