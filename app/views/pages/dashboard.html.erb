@@ -26,7 +26,13 @@
             <%= superpower.name%>
           </div>
           <div class="col-2 my-2">
-            <%= "Booked on #{superpower.bookings[0].date if superpower.bookings[0].present?}" %>
+            <% if superpower.bookings.present? %>
+            <% superpower.bookings.each do |booking| %>
+              <p> booked on <%= booking.date %> </p>
+            <% end %>
+            <% else  %>
+              <p>Currently No Booking</p>
+            <%end%>
           </div>
           <div class="col-1 my-2">
             <%= "€#{superpower.price}"%>
