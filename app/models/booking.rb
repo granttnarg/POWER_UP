@@ -1,7 +1,7 @@
 class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :superpower
-  has_one :review
+  has_one :review, dependent: :destroy
   validates :date, presence: true
   validate :date_cannot_be_in_the_past
 
