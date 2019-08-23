@@ -10,9 +10,25 @@
         </div>
         <div style="font-size: 40px; padding: 5px;"><%= "€#{@superpower.price} per day" %>
         </div>
+  <h3 style="padding-top: 40px;">Unavailable dates:</h3>
+  <ul>
+    <li class="text-center" style="list-style: none;"><% @superpower.bookings.each do |f| %>
+        <div style="color: black; padding-right: 40px;">Booked on <%= f.date %></div>
+        <% end %>
+    </li>
+  </ul>
 
 
-  <p><%= link_to "Click to make a Booking", new_superpower_booking_path(@superpower), class: 'btn btn-secondary' %></p>
+  <h2 style="padding-top: 40px;">Pick your date to book "<%= @superpower.name%>"</h2>
+  <div class="container pt-1" style="width: 600px">
+    <%= simple_form_for [@superpower, @booking] do |f| %>
+      <%= f.input :date %>
+      <div align="center">
+        <%= f.submit("Confirm Booking", class: "btn btn-secondary mt-2 mb-3") %>
+      </div>
+    <% end %>
+  </div>
+
   <p><%= link_to "Back to All Superpowers", superpowers_path, class: 'btn btn-outline-dark' %></p>
   <div class="edit-delete">
 
