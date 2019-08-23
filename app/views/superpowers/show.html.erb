@@ -10,11 +10,7 @@
         </div>
         <div style="font-size: 40px; padding: 5px;"><%= "€#{@superpower.price} per day" %>
         </div>
-          <li class = "inline"><p>User name: <%= @superpower.user.name %></p>
-          </li>
-          <li class = "inline">
-            <p>Book: <%= @superpower.user.email %></p>
-          </li>
+
 
   <p><%= link_to "Click to make a Booking", new_superpower_booking_path(@superpower), class: 'btn btn-secondary' %></p>
   <p><%= link_to "Back to All Superpowers", superpowers_path, class: 'btn btn-outline-dark' %></p>
@@ -25,9 +21,17 @@
     <h2>Reviews:</h2>
     <p>
       <% @superpower.reviews.each do |review| %>
-        <%= "#{review.rating} stars" %>
+        <% review.rating.times do  %>
+          <span class="fas fa-star"></span>
+        <% end %>
+        <% review.blank_stars.times do  %>
+          <span class="far fa-star"></span>
+        <% end %>
+        <br />
         <%= "\"#{review.description}\"" %>
-      <%end%>
+      <br />
+      <br />
+      <% end%>
     </p>
 
   </div>
